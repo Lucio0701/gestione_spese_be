@@ -22,11 +22,14 @@ public class User implements UserDetails {
     @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column
     private String password;
 
     private String firstName;
     private String lastName;
+
+    @Column(unique = true)
+    private String googleId;
 
     public User() {
     }
@@ -73,6 +76,14 @@ public class User implements UserDetails {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getGoogleId() {
+        return googleId;
+    }
+
+    public void setGoogleId(String googleId) {
+        this.googleId = googleId;
     }
 
     // UserDetails methods

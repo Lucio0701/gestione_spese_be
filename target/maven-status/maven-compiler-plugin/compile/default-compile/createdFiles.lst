@@ -1,10 +1,12 @@
 com/gestionespese/controller/AnalyticsController.class
 com/gestionespese/controller/DocumentController.class
 com/gestionespese/controller/AuthController.class
+com/gestionespese/security/CustomOAuth2UserService.class
 com/gestionespese/service/DocumentService.class
 com/gestionespese/dto/goal/GoalCreateRequest.class
 com/gestionespese/dto/goal/GoalDto.class
 com/gestionespese/controller/ExpenseController.class
+com/gestionespese/dto/auth/ForgotPasswordRequest.class
 com/gestionespese/dto/document/PagedDocuments.class
 com/gestionespese/dto/document/OcrJobDto.class
 com/gestionespese/service/BudgetService.class
@@ -19,10 +21,12 @@ com/gestionespese/dto/budget/BudgetUpdateRequest.class
 com/gestionespese/controller/AuthController$RefreshTokenPayload.class
 com/gestionespese/dto/auth/AuthResponse.class
 com/gestionespese/repository/BudgetRepository.class
+com/gestionespese/repository/PasswordResetTokenRepository.class
 com/gestionespese/dto/budget/PagedBudgets.class
 com/gestionespese/dto/goal/GoalUpdateRequest.class
 com/gestionespese/GestioneSpeseApplication.class
 com/gestionespese/dto/budget/BudgetCreateRequest.class
+com/gestionespese/service/EmailService.class
 com/gestionespese/repository/UserRepository.class
 com/gestionespese/service/GoalService.class
 com/gestionespese/dto/budget/BudgetDto.class
@@ -31,6 +35,7 @@ com/gestionespese/security/CustomUserDetailsService.class
 com/gestionespese/security/JwtService.class
 com/gestionespese/dto/expense/ImportJobDto$Status.class
 com/gestionespese/dto/document/OcrJobDto$Status.class
+com/gestionespese/security/OAuth2SuccessHandler.class
 com/gestionespese/model/Budget.class
 com/gestionespese/dto/auth/RegisterRequest.class
 com/gestionespese/controller/GoalController.class
@@ -42,6 +47,7 @@ com/gestionespese/dto/document/DocumentDto.class
 com/gestionespese/dto/auth/LoginRequest.class
 com/gestionespese/model/Goal.class
 com/gestionespese/controller/UserController.class
+com/gestionespese/dto/auth/ResetPasswordRequest.class
 com/gestionespese/dto/expense/ExpenseDto.class
 com/gestionespese/dto/expense/PagedExpenses.class
 com/gestionespese/dto/budget/BudgetStatusDto.class
@@ -59,4 +65,5 @@ com/gestionespese/dto/expense/ExpenseUpdateRequest.class
 com/gestionespese/service/ExpenseService.class
 com/gestionespese/security/JwtAuthenticationFilter.class
 com/gestionespese/dto/analytics/SpendingPredictionDto.class
+com/gestionespese/model/PasswordResetToken.class
 com/gestionespese/dto/goal/GoalProgressDto.class

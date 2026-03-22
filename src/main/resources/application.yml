@@ -1,6 +1,18 @@
 spring:
   application:
     name: gestione-spese-backend
+  # Google OAuth2 — attivare impostando queste env var:
+  #   SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_ID=xxx
+  #   SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_CLIENT_SECRET=xxx
+  #   SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_GOOGLE_SCOPE=email,profile
+  #
+  # Email (reset password) — attivare impostando queste env var:
+  #   SPRING_MAIL_HOST=smtp.gmail.com
+  #   SPRING_MAIL_PORT=587
+  #   SPRING_MAIL_USERNAME=tua@email.com
+  #   SPRING_MAIL_PASSWORD=app-password-gmail
+  #   SPRING_MAIL_PROPERTIES_MAIL_SMTP_AUTH=true
+  #   SPRING_MAIL_PROPERTIES_MAIL_SMTP_STARTTLS_ENABLE=true
   datasource:
     url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/expense_ai_db}
     username: ${SPRING_DATASOURCE_USERNAME:expense_user}
@@ -22,6 +34,7 @@ app:
       secret: ${APP_SECURITY_JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
       expirationMinutes: ${APP_SECURITY_JWT_EXPIRATION_MINUTES:1440}
       refreshExpirationDays: ${APP_SECURITY_JWT_REFRESH_DAYS:30}
+  frontend-url: ${FRONTEND_URL:http://localhost:5173}
 
 # Actuator for health checks
 management:
@@ -32,3 +45,7 @@ management:
   endpoint:
     health:
       show-details: never
+
+bedrock:
+  region: ${BEDROCK_REGION:eu-west-1}
+  model-id: ${BEDROCK_MODEL_ID:eu.amazon.nova-lite-v1:0}

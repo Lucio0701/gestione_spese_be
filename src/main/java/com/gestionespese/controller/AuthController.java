@@ -1,8 +1,10 @@
 package com.gestionespese.controller;
 
 import com.gestionespese.dto.auth.AuthResponse;
+import com.gestionespese.dto.auth.ForgotPasswordRequest;
 import com.gestionespese.dto.auth.LoginRequest;
 import com.gestionespese.dto.auth.RegisterRequest;
+import com.gestionespese.dto.auth.ResetPasswordRequest;
 import com.gestionespese.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -40,6 +42,18 @@ public class AuthController {
     public ResponseEntity<AuthResponse> refresh(@RequestBody RefreshTokenPayload payload) {
         // TODO: implement logic
         return ResponseEntity.ok(AuthResponse.of("access-token", "refresh-token"));
+    }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<Void> forgotPassword(@RequestBody ForgotPasswordRequest request) {
+        authService.forgotPassword(request.email());
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/reset-password")
+    public ResponseEntity<Void> resetPassword(@RequestBody ResetPasswordRequest request) {
+        authService.resetPassword(request.token(), request.newPassword());
+        return ResponseEntity.ok().build();
     }
 
     public record RefreshTokenPayload(String refreshToken) {
